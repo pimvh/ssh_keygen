@@ -18,6 +18,7 @@ ssh_keygen_keyname: "ed25519" # filename of key
 ssh_keygen_cipher: "ed25519" # passed to -t, values are dsa | ecdsa | ecdsa-sk | ed25519 | ed25519-sk | rsa
 ssh_keygen_cipher_options: "" # cipher options addtional args to pass when generating keys
 ssh_keygen_comment: "" # Comment to set in the key
+ssh_keygen_passphrase: "" # Optionally pass a passphrase to generated key (to not prompt for one)
 ```
 
 # Example playbook

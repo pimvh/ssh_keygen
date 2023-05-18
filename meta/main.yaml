@@ -5,7 +5,7 @@ galaxy_info:
 
   license: GPL-3.0-only
 
-  min_ansible_version: 2.1
+  min_ansible_version: "2.14"
 
   platforms:
     - name: Ubuntu
@@ -20,3 +20,44 @@ galaxy_info:
     - keys
 
 dependencies: []
+
+argument_specs:
+  main:
+    short_description: The main entry point for the ssh_keygen role.
+    description: |
+      This entrypoint generates an ssh key
+    options:
+      ssh_keygen_storagedir:
+        type: str
+        required: false
+        default: "~/.ssh"
+        description: directory to store the ssh key
+
+      ssh_keygen_keyname:
+        type: str
+        required: false
+        default: "ed25519"
+        description: filename of keypair
+
+      ssh_keygen_cipher:
+        type: str
+        required: false
+        default: "ed25519"
+        description: cipher of keypair
+
+      ssh_keygen_cipher_options:
+        type: str
+        required: false
+        default: ""
+        description: additional options to pass when creating a keypair
+
+      ssh_keygen_comment:
+        type: str
+        required: true
+        description: comment to give to the keypair
+
+      ssh_keygen_passphrase:
+        type: str
+        required: false
+        description: optional passhrase to given to the keypair, if empty this will prompt
+        default: ""

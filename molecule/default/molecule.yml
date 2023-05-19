@@ -1,5 +1,5 @@
-# terraform managed
 ---
+# terraform managed
 dependency:
   name: galaxy
   options:
@@ -18,7 +18,9 @@ platforms:
     override_command: false
 provisioner:
   name: ansible
-  instance:
-    ansible_user: ansible
+  inventory:
+    host_vars:
+      Ubuntu:
+        ansible_user: ansible
 verifier:
   name: testinfra

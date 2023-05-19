@@ -1,0 +1,22 @@
+---
+- name: Prepare
+  hosts: all
+
+  tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: true
+      become: true
+
+    - name: Install ssh
+      ansible.builtin.package:
+        name: ssh
+      become: true
+
+    - name: Create .ssh directory
+      ansible.builtin.file:
+        path: "~/.ssh"
+        state: directory
+        owner: "{{ ansible_user_id }}"
+        group: "{{ ansible_user_id }}"
+        mode: u=rwx,g=x,o=x

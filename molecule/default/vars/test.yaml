@@ -1,0 +1,6 @@
+---
+ssh_keygen_storagedir: "~/.ssh"
+ssh_keygen_keyname: "testkey_ed25519"
+ssh_keygen_cipher: ed25519
+ssh_keygen_comment: "testkey"
+ssh_keygen_passphrase: "testkey123"

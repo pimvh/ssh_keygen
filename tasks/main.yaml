@@ -16,9 +16,3 @@
     creates: "{{ ssh_keygen_storagedir }}/{{ ssh_keygen_keyname }}.pub"
   changed_when: true
   when: not _ssh_key_path.stat.exists
-
-- name: Set newly created key as fact
-  ansible.builtin.set_fact:
-    ssh_keygen_created_publickey: "{{ lookup('ansible.builtin.file', ssh_keygen_storagedir + '/' + ssh_keygen_keyname + '.pub') }}"
-    ssh_keygen_created_privatekey: "{{ lookup('ansible.builtin.file', ssh_keygen_storagedir + '/' + ssh_keygen_keyname) }}"
-  ignore_errors: "{{ ansible_check_mode }}"

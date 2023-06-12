@@ -59,5 +59,11 @@ argument_specs:
       ssh_keygen_passphrase:
         type: str
         required: false
-        description: optional passhrase to given to the keypair, if empty this will prompt
+        description: optional passhrase to given to the keypair, if empty this role will prompt (see ssh_keygen_no_passphrase)
         default: ""
+
+      ssh_keygen_no_passphrase:
+        type: str
+        required: false
+        default: false
+        description: boolean to allow creating a keypair with no passphrase, if true this role this will not prompt when you pass no password

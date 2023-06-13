@@ -11,7 +11,7 @@
        -t {{ ssh_keygen_cipher }} {{ ssh_keygen_cipher_options }}
        -f {{ ssh_keygen_keyname }}
         {% if ssh_keygen_comment %}-C {{ ssh_keygen_comment }}{% endif %}
-        {% if ssh_keygen_passphrase %}-P {{ ssh_keygen_passphrase }}{% endif %}
+        {% if ssh_keygen_passphrase %}-P {{ ssh_keygen_passphrase }}{% elif ssh_keygen_no_passphrase %}-P ""{% endif %}
     chdir: "{{ ssh_keygen_storagedir }}"
     creates: "{{ ssh_keygen_storagedir }}/{{ ssh_keygen_keyname }}.pub"
   changed_when: true

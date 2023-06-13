@@ -5,3 +5,4 @@ ssh_keygen_cipher: ed25519
 ssh_keygen_cipher_options: ""
 ssh_keygen_comment: ""
 ssh_keygen_passphrase: ""
+ssh_keygen_no_passphrase: false
